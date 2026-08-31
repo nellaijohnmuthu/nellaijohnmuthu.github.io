@@ -6,32 +6,49 @@ so that journalists, party organisers and researchers who search in English also
 land here.
 
 ```
-index.html       Home — slogan, banner photo, who you are, record, centre
+index.html       Home — hero + search, metrics, service cards, centre, record, social
 panchayats.html  35 local bodies, 467 issues, searchable. Tap a village to open it.
 about.html       Biography, qualifications, the four European governance models
 issues.html      Constituency-wide issues: law / ground reality / what was filed
 work.html        The public ledger — every petition with date, office and status
 help.html        Free petition guide. This is the page that brings strangers in.
-assets/style.css
-assets/img/      banner.jpg  banner-sm.jpg  office.jpg  og.jpg
-robots.txt  sitemap.xml  CNAME
+style.css        Full design system. Refactored — no override layers.
+site.js          Mobile menu (all pages)
+search.js        Directory search, filters, highlighting, deep links, share
+validate.py      Pre-publish check. Run: python3 validate.py
+banner.jpg  banner-sm.jpg  office.jpg  og.jpg
+robots.txt  sitemap.xml
+
+Everything sits at the ROOT. No folders — the GitHub web uploader flattens them.
 ```
 
 ---
 
 ## 1. Before it goes live — fill these in
 
-Phone (+91 86102 96021) and email are now filled in from your office sign
-throughout. **22 highlighted placeholders** remain. They render with a
+**No placeholders are rendered on the public site any more.** Where a fact was
+missing, the row is simply omitted rather than shown as a yellow box. What is
+still missing is listed below — `validate.py` passes without them, so nothing
+blocks publishing, but the site is better with them. They render with a
 yellow background so you cannot miss them. Search each file for `class="fill"`.
 
-**Must have (site should not go live without these):**
+**Social accounts are now wired everywhere** — header icons, mobile menu, a
+homepage section, the footer, and the JSON-LD `sameAs` field:
+Instagram, Facebook, X and YouTube.
 
-- [ ] **Confirm the email spelling.** Your overhead sign reads
-      `nellaijohnmuthu@gmail.com` but the two standing banners read
-      `nellajohnmuthu@gmail.com` (no "i"). I used the first. If the banners are
-      right, fix all six pages — and either way, correct the odd one out, because
-      a wrong email on a signboard means petitions never reach you.
+**Still missing (omitted from the page, not faked):**
+
+- [ ] **Your two standing banners have the wrong email.** They read
+      `nellajohnmuthu@gmail.com`; your GitHub account and overhead sign both use
+      `nellaijohnmuthu@gmail.com`. Get the banners corrected — a wrong address on
+      a signboard means petitions never reach you.
+- [ ] **Education section on the About page.** Currently omitted entirely rather
+      than shown empty. Add only what you hold a certificate for. This is the one
+      remaining gap that matters for how a stranger judges you.
+- [ ] **Opening hours** for the centre — omitted from the page until supplied.
+- [ ] **Running petition count** — the homepage shows 467 documented issues,
+      which is true. It does not claim a petition count, because that number
+      changes and a stale one is worse than none.
 - [ ] Postal code for the Melapudukudi centre
 - [ ] Opening hours of the centre
 - [ ] YouTube channel handle — replace `@FILL-CHANNEL-HANDLE` everywhere,

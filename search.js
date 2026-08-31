@@ -125,6 +125,7 @@
   document.addEventListener('click', function (e) {
     var m = e.target.closest('.minicat');
     if (!m) return;
+    e.preventDefault(); e.stopPropagation();
     cat = m.dataset.c;
     catChips.forEach(function (o) { o.setAttribute('aria-pressed', String(o.dataset.c === cat)); });
     apply(true);
@@ -135,6 +136,7 @@
   document.addEventListener('click', function (e) {
     var b = e.target.closest('.sharebtn');
     if (!b) return;
+    e.preventDefault();
     var url = location.origin + location.pathname + '#' + b.dataset.slug;
     var data = { title: b.dataset.name, text: b.dataset.name + ' — களப் பிரச்சினைகள்', url: url };
     if (navigator.share) { navigator.share(data).catch(function () {}); return; }
