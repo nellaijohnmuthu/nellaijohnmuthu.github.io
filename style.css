@@ -1,0 +1,324 @@
+/* Nellai John Muthu — nellaijohnmuthu.com
+   Palette grounded in the Tamirabarani belt and the government petition file:
+   river green ink, pale sage stone paper, endorsement red used only as a status mark. */
+
+:root {
+  --paper:      #E6E8E1;
+  --paper-warm: #DDE0D6;
+  --river:      #14332E;
+  --river-mid:  #23504F;
+  --ink:        #16231F;
+  --ink-soft:   #4A5B55;
+  --stamp:      #9E2B20;
+  --brass:      #7E6420;
+  --rule:       #C2C7BB;
+  --rule-dark:  #2F5049;
+
+  --measure: 63ch;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+  --stack: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(1.02rem, 0.98rem + 0.25vw, 1.16rem);
+  line-height: 1.68;
+  font-variant-numeric: tabular-nums;
+}
+
+:lang(ta), .ta {
+  font-family: "Anek Tamil", "Noto Sans Tamil", sans-serif;
+  line-height: 1.82;
+  font-weight: 400;
+}
+
+/* ---------- Type scale ---------- */
+
+h1, h2, h3, h4 { margin: 0 0 .5em; font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2rem, 1.4rem + 2.8vw, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.15rem); }
+h3 { font-size: clamp(1.14rem, 1.05rem + 0.5vw, 1.4rem); }
+h2:lang(ta), h3:lang(ta), h1:lang(ta) { font-weight: 600; line-height: 1.4; letter-spacing: 0; }
+
+p { margin: 0 0 1.1em; max-width: var(--measure); }
+p:lang(ta) { max-width: 46ch; }
+
+a { color: var(--river-mid); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--stamp); }
+
+:focus-visible { outline: 2.5px solid var(--stamp); outline-offset: 3px; }
+
+.en-note {
+  font-size: .92rem;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--rule);
+  padding-left: 1rem;
+  margin: 0 0 1.4em;
+  max-width: 58ch;
+}
+
+.lede { font-size: 1.16em; }
+
+/* ---------- Layout ---------- */
+
+.wrap { width: min(76rem, 100%); margin-inline: auto; padding-inline: var(--gutter); }
+
+section { padding-block: var(--stack); border-top: 1px solid var(--rule); }
+section:first-of-type { border-top: 0; }
+
+/* Asymmetric rail grid: margin annotations left, body right — like a petition file */
+.rail { display: grid; gap: clamp(1rem, 3vw, 3.5rem); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 62rem) {
+  .rail { grid-template-columns: 13rem minmax(0, 1fr); }
+}
+.rail > .rail-label {
+  font-family: "Anek Tamil", sans-serif;
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  padding-top: .55rem;
+  border-top: 2px solid var(--rule-dark);
+}
+.rail > .rail-label span { display: block; color: var(--ink); font-weight: 600; }
+
+/* ---------- Header ---------- */
+
+.site-head {
+  background: var(--river);
+  color: var(--paper);
+}
+.site-head .wrap {
+  display: flex; flex-wrap: wrap; gap: .75rem 2rem;
+  align-items: baseline; justify-content: space-between;
+  padding-block: 1.15rem;
+}
+.brand {
+  font-family: "Anek Tamil", sans-serif;
+  font-weight: 600; font-size: 1.16rem; color: var(--paper);
+  text-decoration: none; letter-spacing: .01em;
+}
+.brand small { display: block; font-family: "Newsreader", serif; font-weight: 400; font-size: .74rem; opacity: .68; letter-spacing: .04em; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 1.15rem; }
+.site-nav a {
+  font-family: "Anek Tamil", sans-serif; font-size: .97rem; font-weight: 500;
+  color: #C9D6CE; text-decoration: none; padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+}
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: #fff; border-bottom-color: var(--stamp); }
+
+/* ---------- Hero ---------- */
+
+.hero { background: var(--river); color: var(--paper); border-top: 0; padding-block: clamp(3rem, 9vw, 6.5rem) clamp(3.5rem, 9vw, 7rem); }
+.hero .kicker {
+  font-family: "Anek Tamil", sans-serif; font-size: 1rem; font-weight: 500;
+  color: #93B3A6; margin: 0 0 1.6rem;
+}
+.hero-slogan {
+  font-family: "Anek Tamil", sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.05rem, 1.1rem + 4.6vw, 4.4rem);
+  line-height: 1.24; letter-spacing: -0.015em;
+  margin: 0 0 1.5rem; max-width: 16ch; color: #FBFCFA;
+}
+.hero-slogan .l { display: block; }
+.hero p { color: #C4D3CA; max-width: 44ch; }
+.hero .en-note { color: #9DB2A7; border-left-color: var(--rule-dark); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-slogan .l { animation: rise .8s cubic-bezier(.2,.7,.3,1) backwards; }
+  .hero-slogan .l:nth-child(2) { animation-delay: .13s; }
+  .hero-slogan .l:nth-child(3) { animation-delay: .26s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(0.5em); } }
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
+.btn {
+  font-family: "Anek Tamil", sans-serif; font-size: 1rem; font-weight: 600;
+  padding: .72rem 1.35rem; text-decoration: none; border: 1.5px solid;
+  transition: background-color .15s, color .15s;
+}
+.btn-solid { background: var(--paper); color: var(--river); border-color: var(--paper); }
+.btn-solid:hover { background: var(--stamp); border-color: var(--stamp); color: #fff; }
+.btn-line { background: transparent; color: #DCE5DE; border-color: #4E6E66; }
+.btn-line:hover { background: #1D423B; color: #fff; border-color: #7D9A90; }
+
+/* ---------- Ledger (the signature element) ---------- */
+
+.ledger { border-top: 2px solid var(--rule-dark); margin-top: 1.5rem; }
+.entry {
+  display: grid; gap: .15rem 1.5rem; grid-template-columns: 1fr;
+  padding: 1.35rem 0; border-bottom: 1px solid var(--rule);
+}
+@media (min-width: 48rem) {
+  .entry { grid-template-columns: 7.5rem minmax(0, 1fr) 9rem; align-items: baseline; }
+}
+.entry-date {
+  font-family: "Anek Tamil", sans-serif; font-size: .88rem; font-weight: 500;
+  color: var(--ink-soft); white-space: nowrap;
+}
+.entry-body h3 { margin: 0 0 .3rem; font-size: 1.06rem; }
+.entry-body p { margin: 0; font-size: .95rem; color: var(--ink-soft); max-width: 60ch; }
+.entry-body p:lang(ta) { max-width: 50ch; }
+.entry-status {
+  font-family: "Anek Tamil", sans-serif; font-size: .82rem; font-weight: 600;
+  justify-self: start; padding: .18rem .55rem; border: 1.5px solid var(--stamp);
+  color: var(--stamp); white-space: nowrap; margin-top: .4rem;
+}
+@media (min-width: 48rem) { .entry-status { justify-self: end; margin-top: 0; } }
+.entry-status.done { border-color: var(--river-mid); color: var(--river-mid); }
+.entry-status.open { border-color: var(--brass); color: var(--brass); }
+
+/* ---------- Issue list ---------- */
+
+.issues { margin-top: 1.5rem; border-top: 2px solid var(--rule-dark); }
+.issue { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+.issue h3 { margin-bottom: .35rem; }
+.issue p { margin-bottom: .6rem; }
+.issue .place {
+  font-family: "Anek Tamil", sans-serif; font-size: .86rem; font-weight: 500;
+  color: var(--ink-soft); display: block; margin-bottom: .5rem;
+}
+.issue .did {
+  font-size: .93rem; padding-left: 1rem; border-left: 3px solid var(--river-mid);
+  color: var(--ink); margin: 0;
+}
+
+/* ---------- Fact strip ---------- */
+
+.facts { display: grid; gap: 1.6rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-top: 2rem; }
+.fact { border-top: 2px solid var(--rule-dark); padding-top: .85rem; }
+.fact b {
+  display: block; font-family: "Anek Tamil", sans-serif;
+  font-size: clamp(1.5rem, 1.2rem + 1.1vw, 2rem); font-weight: 600; line-height: 1.15; color: var(--river);
+}
+.fact span { display: block; font-size: .92rem; color: var(--ink-soft); margin-top: .3rem; }
+
+/* ---------- Steps / help content ---------- */
+
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.steps > li {
+  counter-increment: s; position: relative;
+  padding: 1.4rem 0 1.4rem 3.1rem; border-bottom: 1px solid var(--rule);
+}
+.steps > li::before {
+  content: counter(s); position: absolute; left: 0; top: 1.35rem;
+  font-family: "Anek Tamil", sans-serif; font-weight: 600; font-size: 1rem;
+  color: var(--paper); background: var(--river-mid);
+  width: 2rem; height: 2rem; display: grid; place-items: center;
+}
+.steps h3 { margin-bottom: .3rem; font-size: 1.05rem; }
+.steps p { margin: 0; font-size: .96rem; }
+
+.plain { list-style: none; padding: 0; margin: 1.2rem 0 0; max-width: var(--measure); }
+.plain li { padding: .65rem 0; border-bottom: 1px solid var(--rule); font-size: .98rem; }
+.plain li b { font-family: "Anek Tamil", sans-serif; font-weight: 600; }
+
+.callout {
+  background: var(--paper-warm); border-left: 4px solid var(--river-mid);
+  padding: 1.3rem 1.5rem; margin: 2rem 0; max-width: 60ch;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout h3 { margin-bottom: .4rem; font-size: 1.02rem; }
+
+/* Placeholder marker — replace all of these before publishing */
+.fill {
+  background: #FBE9A7; color: #5A4407; padding: 0 .3em;
+  border-bottom: 2px dotted #A98A16; font-style: normal;
+}
+
+/* ---------- Footer ---------- */
+
+.site-foot { background: var(--river); color: #B7C8BE; padding-block: clamp(2.5rem, 6vw, 4rem); font-size: .95rem; }
+.site-foot .wrap { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.site-foot h2 { color: #fff; font-size: 1.05rem; font-family: "Anek Tamil", sans-serif; margin-bottom: .6rem; }
+.site-foot a { color: #DDE7E0; }
+.site-foot a:hover { color: #fff; }
+.site-foot p { margin-bottom: .5rem; max-width: 34ch; }
+.site-foot .legal { grid-column: 1 / -1; border-top: 1px solid var(--rule-dark); padding-top: 1.3rem; font-size: .84rem; color: #8FA79B; }
+.site-foot .legal p { max-width: 70ch; }
+
+.skip {
+  position: absolute; left: -9999px; background: var(--stamp); color: #fff;
+  padding: .6rem 1rem; z-index: 10;
+}
+.skip:focus { left: .5rem; top: .5rem; position: fixed; }
+
+/* ---------- Photography ---------- */
+
+.banner { position: relative; background: var(--river); }
+.banner img { display: block; width: 100%; height: clamp(230px, 42vw, 470px); object-fit: cover; object-position: center 42%; }
+.banner figcaption {
+  font-family: "Anek Tamil", sans-serif; font-size: .88rem; color: var(--ink-soft);
+  padding: .7rem 0 0; border-top: 1px solid var(--rule); margin-top: .8rem;
+}
+figure.photo { margin: 2rem 0 0; }
+figure.photo img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+
+/* ---------- Panchayat directory ---------- */
+
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.8rem 0 1rem; }
+.chip {
+  font-family: "Anek Tamil", sans-serif; font-size: .95rem; font-weight: 500;
+  padding: .45rem 1rem; border: 1.5px solid var(--rule-dark); background: transparent;
+  color: var(--ink); cursor: pointer; transition: background-color .12s, color .12s;
+}
+.chip:hover { background: var(--paper-warm); }
+.chip[aria-pressed="true"] { background: var(--river); color: var(--paper); border-color: var(--river); }
+
+.search-row { margin: 1rem 0 .5rem; }
+.search-row input {
+  font-family: "Anek Tamil", sans-serif; font-size: 1rem; width: min(28rem, 100%);
+  padding: .6rem .85rem; border: 1.5px solid var(--rule-dark); background: #fff; color: var(--ink);
+}
+.result-note { font-family: "Anek Tamil", sans-serif; font-size: .92rem; color: var(--ink-soft); margin: .4rem 0 0; }
+
+.lb-group { margin-top: 2.6rem; }
+.lb-group > h3 {
+  font-family: "Anek Tamil", sans-serif; font-size: 1rem; font-weight: 600; color: var(--ink-soft);
+  border-bottom: 2px solid var(--rule-dark); padding-bottom: .5rem; margin-bottom: 0;
+}
+.lb { border-bottom: 1px solid var(--rule); }
+.lb > summary {
+  display: flex; align-items: baseline; gap: .9rem; justify-content: space-between;
+  padding: 1.05rem .2rem; cursor: pointer; list-style: none;
+  font-family: "Anek Tamil", sans-serif; font-size: 1.08rem; font-weight: 600;
+}
+.lb > summary::-webkit-details-marker { display: none; }
+.lb > summary:hover { background: var(--paper-warm); }
+.lb > summary .n { display: flex; align-items: baseline; gap: .7rem; min-width: 0; }
+.lb > summary .n::before {
+  content: "+"; font-weight: 400; font-size: 1.3rem; line-height: 1; color: var(--river-mid); width: .8rem; flex: none;
+}
+.lb[open] > summary .n::before { content: "\2212"; }
+.lb .badge {
+  font-family: "Newsreader", serif; font-size: .88rem; font-weight: 400; color: var(--ink-soft);
+  white-space: nowrap; flex: none;
+}
+.lb-body { padding: .3rem 0 1.6rem 1.5rem; }
+.cat { margin-top: 1.4rem; }
+.cat > h4 {
+  font-family: "Anek Tamil", sans-serif; font-size: .97rem; font-weight: 600; color: var(--river-mid);
+  margin: 0 0 .5rem; padding-left: .7rem; border-left: 3px solid var(--river-mid);
+}
+.cat ul { margin: 0; padding-left: 1.25rem; }
+.cat li { font-size: .96rem; line-height: 1.7; margin-bottom: .55rem; max-width: 66ch; }
+.cat li mark { background: #FBE9A7; color: inherit; }
+.empty { font-family: "Anek Tamil", sans-serif; color: var(--ink-soft); padding: 2rem 0; }
+
+@media (max-width: 30rem) {
+  .lb-body { padding-left: .4rem; }
+  .lb > summary { font-size: 1rem; }
+}
