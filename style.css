@@ -322,3 +322,133 @@ figure.photo img { display: block; width: 100%; height: auto; border: 1px solid 
   .lb-body { padding-left: .4rem; }
   .lb > summary { font-size: 1rem; }
 }
+
+/* ============ Readability bump for outdoor mobile use ============ */
+body { font-size: clamp(1.09rem, 1.02rem + 0.3vw, 1.19rem); }
+:lang(ta), .ta { line-height: 1.85; }
+.cat li, .entry-body p, .plain li { font-size: 1.02rem; }
+
+/* ============ Mobile menu ============ */
+.menu-btn {
+  display: none; background: none; border: 1.5px solid #4E6E66; cursor: pointer;
+  width: 46px; height: 44px; padding: 0 11px; flex: none;
+}
+.menu-btn span { display: block; height: 2px; background: var(--paper); margin: 4px 0; }
+.menu-btn[aria-expanded="true"] { background: #1D423B; }
+
+@media (max-width: 52rem) {
+  .site-head .wrap { flex-wrap: nowrap; align-items: center; gap: 1rem; }
+  .menu-btn { display: block; }
+  .site-nav {
+    display: none; flex-basis: 100%; flex-direction: column; gap: 0;
+    order: 3; padding-bottom: .5rem;
+  }
+  .site-nav.open { display: flex; }
+  .site-head .wrap:has(.site-nav.open) { flex-wrap: wrap; }
+  .site-nav a {
+    padding: .85rem .2rem; border-bottom: 1px solid #2F5049; font-size: 1.05rem;
+  }
+  .site-nav a:hover, .site-nav a[aria-current="page"] { border-bottom-color: var(--stamp); }
+}
+
+/* ============ Mobile action bar ============ */
+.action-bar { display: none; }
+@media (max-width: 52rem) {
+  .action-bar {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    background: var(--river); border-top: 1px solid #2F5049;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .action-bar a {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: .18rem; min-height: 56px; padding: .5rem .3rem;
+    font-family: "Anek Tamil", sans-serif; font-size: .84rem; font-weight: 600;
+    color: #DCE7E0; text-decoration: none;
+  }
+  .action-bar a + a { border-left: 1px solid #2F5049; }
+  .action-bar a:active { background: #1D423B; }
+  .action-bar svg { width: 21px; height: 21px; fill: currentColor; }
+  body { padding-bottom: 66px; }
+  html { scroll-padding-bottom: 80px; }
+}
+
+/* ============ Directory upgrades ============ */
+.hero-compact { padding-block: clamp(2.2rem, 6vw, 3.6rem) clamp(2.4rem, 6vw, 4rem); }
+
+.search-row label { font-family: "Anek Tamil", sans-serif; font-weight: 600; display: block; margin-bottom: .45rem; }
+.search-row input { min-height: 48px; font-size: 1.05rem; }
+.search-row input:focus { border-color: var(--river); }
+
+.cat-filters { margin-top: .5rem; }
+.cat-chip { font-size: .9rem; padding: .4rem .75rem; }
+.cat-chip b { font-weight: 600; color: var(--ink-soft); }
+.cat-chip[aria-pressed="true"] b { color: #BFD3C9; }
+.chip { min-height: 40px; }
+
+.clearbtn {
+  font-family: "Anek Tamil", sans-serif; font-size: .9rem; background: none;
+  border: none; color: var(--stamp); cursor: pointer; text-decoration: underline;
+  padding: .3rem; min-height: 34px;
+}
+
+.minicats { margin: 0 0 .9rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+.minicat {
+  font-family: "Anek Tamil", sans-serif; font-size: .82rem; color: var(--ink-soft);
+  border: 1px solid var(--rule); padding: .18rem .55rem; cursor: pointer;
+}
+.minicat:hover { border-color: var(--river-mid); color: var(--river-mid); }
+
+.sharerow { margin: 0 0 .4rem; }
+.sharebtn {
+  font-family: "Anek Tamil", sans-serif; font-size: .87rem; background: none;
+  border: 1.5px solid var(--rule-dark); color: var(--ink); padding: .4rem .8rem;
+  cursor: pointer; min-height: 38px;
+}
+.sharebtn:hover { background: var(--paper-warm); }
+
+.wa-link {
+  display: inline-block; font-family: "Anek Tamil", sans-serif; font-weight: 600;
+  background: #075E54; color: #fff; text-decoration: none;
+  padding: .6rem 1.15rem; min-height: 44px; line-height: 1.9;
+}
+.wa-link:hover { background: #04443D; color: #fff; }
+.privacy-note { font-size: .88rem; color: var(--ink-soft); margin-bottom: 0; }
+
+.lb[hidden], .lb-group[hidden], .cat[hidden] { display: none !important; }
+.lb { content-visibility: auto; contain-intrinsic-size: auto 90px; }
+.lb[open] { content-visibility: visible; }
+
+/* ============ Homepage search ============ */
+.hero-search { margin-top: 2rem; max-width: 34rem; }
+.hero-search label { display: block; font-family: "Anek Tamil", sans-serif; font-weight: 600; color: #C4D3CA; margin-bottom: .5rem; }
+.hero-search .box { display: flex; }
+.hero-search input {
+  flex: 1; min-width: 0; min-height: 50px; font-family: "Anek Tamil", sans-serif;
+  font-size: 1.05rem; padding: .6rem .85rem; border: 0; background: #fff; color: var(--ink);
+}
+.hero-search button {
+  font-family: "Anek Tamil", sans-serif; font-size: 1rem; font-weight: 600;
+  background: var(--stamp); color: #fff; border: 0; padding: 0 1.2rem; min-height: 50px; cursor: pointer;
+}
+.hero-search button:hover { background: #86231A; }
+.hero-search .eg { font-size: .88rem; color: #93B3A6; margin: .55rem 0 0; }
+.hero-search .eg a { color: #B9CDC3; }
+
+/* ============ Print ============ */
+@media print {
+  .site-head, .site-foot, .action-bar, .filters, .search-row, .sharerow,
+  .minicats, .skip, .result-note, .hero-search, .banner { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; padding-bottom: 0; }
+  .hero { background: #fff !important; color: #000 !important; padding-block: 0 1rem; }
+  .hero-slogan, .hero p, .hero .kicker { color: #000 !important; }
+  section { padding-block: .8rem; border-top: 1px solid #999; }
+  .lb { content-visibility: visible; }
+  .lb > summary { font-size: 12pt; }
+  .lb-body { display: block !important; }
+  .steps > li, .issue, .entry, .cat { break-inside: avoid; }
+  h2, h3, h4 { break-after: avoid; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #444; }
+  a[href^="/"]::after, a[href^="#"]::after { content: ""; }
+}
+@page { margin: 15mm; }

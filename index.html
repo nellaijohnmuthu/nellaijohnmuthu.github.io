@@ -6,6 +6,7 @@
 
 <title>நெல்லை ஜான் முத்து | Nellai John Muthu — சமூக ஆர்வலர், அம்பாசமுத்திரம்</title>
 <meta name="description" content="நெல்லை ஜான் முத்து — திருநெல்வேலி மாவட்டம், சேரன்மகாதேவி வட்டத்தில் இலவச மனு உதவி மையம் நடத்தும் சமூக ஆர்வலர். Nellai John Muthu is a social activist running a free public petition and government scheme assistance centre in Melapudukudi, Cheranmahadevi block, Ambasamudram constituency, Tirunelveli.">
+<meta name="theme-color" content="#14332E">
 <link rel="canonical" href="https://nellaijohnmuthu.com/">
 
 <meta property="og:type" content="profile">
@@ -57,13 +58,15 @@
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/">நெல்லை ஜான் முத்து<small>NELLAI JOHN MUTHU</small></a>
-    <nav class="site-nav" aria-label="முதன்மை">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainnav" aria-label="பட்டியலைத் திற">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="mainnav" aria-label="முதன்மை">
       <a href="/" aria-current="page">முகப்பு</a>
-      <a href="/about.html">என்னைப் பற்றி</a>
-      <a href="/panchayats.html">ஊராட்சி பிரச்சினைகள்</a>
-      <a href="/issues.html">தொகுதிப் பிரச்சினைகள்</a>
+      <a href="/panchayats.html">உங்கள் ஊர்</a>
       <a href="/work.html">பணிப் பதிவு</a>
       <a href="/help.html">மனு உதவி</a>
+      <a href="/about.html">என்னைப் பற்றி</a>
     </nav>
   </div>
 </header>
@@ -74,8 +77,17 @@
   <div class="wrap">
     <p class="kicker">சமூக ஆர்வலர் · சேரன்மகாதேவி வட்டம், திருநெல்வேலி மாவட்டம்</p>
     <h1 class="hero-slogan"><span class="l">மக்கள் பணத்திற்கு</span><span class="l">மக்கள் கணக்கு</span></h1>
-    <p>மேலப்புதுக்குடியில் இலவச மனு உதவி மையம். ஒரு ரூபாய் கட்டணம் இல்லை. அரசு அலுவலகத்தில் என்ன நடக்கிறது என்பதை மக்களிடம் திரும்பச் சொல்கிறேன்.</p>
+    <p>உங்கள் ஊரின் பிரச்சினையைத் தேடுங்கள். மனு உதவி இலவசமாகப் பெறுங்கள். தாக்கல் செய்யப்பட்டவற்றின் நிலையைப் பாருங்கள்.</p>
+    <p class="ta" style="color:#93B3A6;font-size:.95rem">35 உள்ளாட்சி அமைப்புகள் · 467 பதிவுகள் · கட்டணம் இல்லை</p>
     <p class="en-note" lang="en">A free petition and government scheme assistance centre at Melapudukudi. No fee, no middleman. Every application filed is recorded here in public.</p>
+    <form class="hero-search" action="/panchayats.html" method="get">
+      <label for="hq">உங்கள் ஊரின் பிரச்சினையைத் தேடுங்கள்</label>
+      <div class="box">
+        <input id="hq" name="q" type="search" placeholder="புதுக்குடி · pudukudi · குடிநீர்" autocomplete="off" enterkeyhint="search">
+        <button type="submit">தேடு</button>
+      </div>
+      <p class="eg">எ.கா. <a href="/panchayats.html?q=%E0%AE%AA%E0%AF%81%E0%AE%A4%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%E0%AE%9F%E0%AE%BF">புதுக்குடி</a> · <a href="/panchayats.html?cat=water">குடிநீர்</a> · <a href="/panchayats.html?cat=drain">வடிகால்</a> · <a href="/panchayats.html?cat=road">சாலை</a></p>
+    </form>
     <div class="actions">
       <a class="btn btn-solid" href="/help.html">மனு உதவி பெற</a>
       <a class="btn btn-line" href="/work.html">பணிப் பதிவைப் பார்க்க</a>
@@ -87,7 +99,7 @@
 <figure class="banner">
   <picture>
     <source media="(max-width: 40rem)" srcset="/banner-sm.jpg">
-    <img src="/banner.jpg" width="1800" height="830"
+    <img src="/banner.jpg" width="1800" height="830" fetchpriority="high" decoding="async"
          alt="மேலப்புதுக்குடி பகுதி மக்களுடன் நெல்லை ஜான் முத்து — கிராமக் கூட்டம்">
   </picture>
 </figure>
@@ -247,15 +259,21 @@
       </ul>
 
       <figure class="photo">
-        <img src="/office.jpg" width="1400" height="788"
+        <img src="/office.jpg" width="1400" height="788" loading="lazy" decoding="async"
              alt="நெல்லை ஜான் முத்து மக்கள் சேவை மையம், புதுக்குடி — மனு எழுதித் தரும் பணி">
       </figure>
+
+      <div class="callout">
+        <h3>சேவை விதிகள்</h3>
+        <p class="ta">மக்களிடம் ஒரு ரூபாய் கட்டணம் இல்லை. கட்சிப் பாரபட்சம் இல்லை. ரசீது இல்லாத மனு இல்லை. மனு கொடுத்தவர்களின் விவரம் எந்த அரசியல் தேவைக்கும் பயன்படுத்தப்படாது.</p>
+      </div>
 
       <div class="callout">
         <h3>முகவரி மற்றும் நேரம்</h3>
         <p class="ta">மேலப்புதுக்குடி, புதுக்குடி, சேரன்மகாதேவி ஒன்றியம், திருநெல்வேலி மாவட்டம் — <span class="fill">அஞ்சல் குறியீடு</span></p>
         <p class="ta">நேரம்: <span class="fill">காலை 0.00 – மாலை 0.00, திங்கள் முதல் சனி வரை</span></p>
         <p class="ta">தொலைபேசி / WhatsApp: <a href="tel:+918610296021">+91 86102 96021</a></p>
+        <p><a class="wa-link" href="https://wa.me/918610296021">WhatsApp-ல் தொடர்பு கொள்ள</a></p>
       </div>
     </div>
   </div>
@@ -273,22 +291,26 @@
     </div>
     <div>
       <h2>பக்கங்கள்</h2>
-      <p><a href="/about.html">என்னைப் பற்றி</a><br>
-         <a href="/panchayats.html">ஊராட்சி பிரச்சினைகள்</a><br>
-         <a href="/issues.html">தொகுதிப் பிரச்சினைகள்</a><br>
-         <a href="/work.html">பணிப் பதிவு</a><br>
-         <a href="/help.html">மனு உதவி வழிகாட்டி</a></p>
+      <p><a href="/">முகப்பு</a><br><a href="/panchayats.html">உங்கள் ஊர்</a><br>
+         <a href="/work.html">பணிப் பதிவு</a><br><a href="/help.html">மனு உதவி</a><br>
+         <a href="/issues.html">தொகுதிப் பிரச்சினைகள்</a><br><a href="/about.html">என்னைப் பற்றி</a></p>
     </div>
     <div>
-      <h2>காணொளி</h2>
-      <p class="ta">ஆட்சி நிர்வாகம் குறித்த தமிழ் காணொளிகள்.</p>
-      <p><a href="https://www.youtube.com/@FILL-CHANNEL-HANDLE" class="fill">YouTube சேனல்</a></p>
+      <h2>சேவை விதிகள்</h2>
+      <p class="ta">கட்டணம் இல்லை.<br>கட்சிப் பாரபட்சம் இல்லை.<br>ரசீது இல்லாத மனு இல்லை.<br>உங்கள் தகவல் பாதுகாக்கப்படும்.</p>
     </div>
     <div class="legal">
       <p lang="en">© 2026 Nellai John Muthu. Published from Melapudukudi, Cheranmahadevi block, Tirunelveli district, Tamil Nadu. This is a personal website of a private citizen documenting civic and social work. It is not published by or on behalf of any political party or candidate.</p>
+      <p class="ta">தளம் கடைசியாகப் புதுப்பிக்கப்பட்டது: 31 ஆகஸ்ட் 2026</p>
     </div>
   </div>
 </footer>
 
+<nav class="action-bar" aria-label="விரைவு தொடர்பு">
+  <a href="tel:+918610296021"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>அழைக்க</a>
+  <a href="https://wa.me/918610296021"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6a11 11 0 0 1-4.3-3.9c-.5-.7-.8-1.5-.8-2.2 0-.7.3-1.3.6-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c0 .2 0 .3-.1.5l-.4.5c-.1.1-.2.3-.1.5.3.5.7 1.1 1.3 1.6.7.6 1.3.9 1.6 1 .2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.8.9c.2.1.3.2.4.3 0 .2 0 .6-.2 1.1z"/></svg>WhatsApp</a>
+  <a href="/help.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>மனு உதவி</a>
+</nav>
+<script src="/site.js" defer></script>
 </body>
 </html>
