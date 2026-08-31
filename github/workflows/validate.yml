@@ -1,0 +1,24 @@
+# Runs the site check automatically on every commit to main.
+# Green tick = safe to publish. Red X = something is broken; GitHub emails you.
+name: Check site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:      # lets you run it manually from the Actions tab
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the site files
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run validate.py
+        run: python3 validate.py
